@@ -28,6 +28,10 @@
 		0777E091260B974E004C1FF3 /* eson_demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = eson_demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		0777E094260B974E004C1FF3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
+		0777E09E260B9830004C1FF3 /* example_eson_pretty.block */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson_pretty.block; sourceTree = "<group>"; };
+		0777E09F260B99CA004C1FF3 /* example_eson.block */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson.block; sourceTree = "<group>"; };
+		0777E0A0260B9BBA004C1FF3 /* eric_original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eric_original.jpg; sourceTree = "<group>"; };
+		0777E0A1260B9D2F004C1FF3 /* example_eson.bkup */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson.bkup; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +49,11 @@
 		0777E085260B849E004C1FF3 = {
 			isa = PBXGroup;
 			children = (
+				0777E0A0260B9BBA004C1FF3 /* eric_original.jpg */,
 				0777E08C260B860E004C1FF3 /* README.md */,
+				0777E09E260B9830004C1FF3 /* example_eson_pretty.block */,
+				0777E09F260B99CA004C1FF3 /* example_eson.block */,
+				0777E0A1260B9D2F004C1FF3 /* example_eson.bkup */,
 				0777E093260B974E004C1FF3 /* eson_demo */,
 				0777E092260B974E004C1FF3 /* Products */,
 				0777E09A260B9788004C1FF3 /* Frameworks */,
