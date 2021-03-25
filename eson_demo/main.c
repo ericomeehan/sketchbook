@@ -21,11 +21,39 @@ void write_image_into_eson()
     long fsize = ftell(image);
     fseek(image, 0, SEEK_SET);
     
-    void *data = malloc(fsize + 1);
+    void *data = malloc(fsize);
     fread(data, fsize, fsize, image);
-    ((char *)data)[fsize] = '}';
     fclose(image);
+    //((char *)data)[fsize] = '}';
     
-    fwrite(data, fsize + 1, fsize + 1, example_eson);
+    fwrite(data, fsize, fsize, example_eson);
+    
     fclose(example_eson);
+}
+
+
+int main()
+{
+    //write_image_into_eson();
+    // Now read the contents from eson and write them to a new image file
+    FILE *eson = fopen("/Users/eric/Documents/sketchbook/example_eson.block", "r");
+    fseek(eson, 0, SEEK_END);
+    long fsize = ftell(eson);
+    fseek(eson, 0, SEEK_SET);
+    
+    void *data = malloc(fsize);
+    fread(data, fsize, fsize, eson);
+    
+    // 274 characters before file
+    
+    void *image = malloc(fsize - 274);
+    for (int i = 274; i < fsize-1; i++)
+    {
+        ((char *)image)[i - 274] = ((char *)data)[i];
+    }
+    
+    FILE *output = fopen("/Users/eric/Desktop/output.jpg", "w");
+    fwrite(image, fsize-274, fsize-274, output);
+    fclose(output);
+    
 }
