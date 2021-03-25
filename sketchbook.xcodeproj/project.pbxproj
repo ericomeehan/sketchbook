@@ -26,6 +26,9 @@
 /* Begin PBXFileReference section */
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		07343048260C38C600330317 /* eric_original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eric_original.jpg; sourceTree = "<group>"; };
+		07343049260C39D500330317 /* eson.bkup */ = {isa = PBXFileReference; lastKnownFileType = text; path = eson.bkup; sourceTree = "<group>"; };
+		0734304A260C3A0600330317 /* example.eson */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.eson; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +56,9 @@
 		0777E085260B849E004C1FF3 = {
 			isa = PBXGroup;
 			children = (
+				07343049260C39D500330317 /* eson.bkup */,
+				0734304A260C3A0600330317 /* example.eson */,
+				07343048260C38C600330317 /* eric_original.jpg */,
 				0777E08C260B860E004C1FF3 /* README.md */,
 				0734303B260C360000330317 /* sketch */,
 				0777E092260B974E004C1FF3 /* Products */,
