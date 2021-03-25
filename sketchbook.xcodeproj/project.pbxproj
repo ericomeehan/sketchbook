@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0777E095260B974E004C1FF3 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0777E094260B974E004C1FF3 /* main.c */; };
-		0777E09C260B9788004C1FF3 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
+		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
+		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0777E08F260B974E004C1FF3 /* CopyFiles */ = {
+		07343038260C360000330317 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,37 +24,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
+		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0777E091260B974E004C1FF3 /* eson_demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = eson_demo; sourceTree = BUILT_PRODUCTS_DIR; };
-		0777E094260B974E004C1FF3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
-		0777E09E260B9830004C1FF3 /* example_eson_pretty.block */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson_pretty.block; sourceTree = "<group>"; };
-		0777E09F260B99CA004C1FF3 /* example_eson.block */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson.block; sourceTree = "<group>"; };
-		0777E0A0260B9BBA004C1FF3 /* eric_original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eric_original.jpg; sourceTree = "<group>"; };
-		0777E0A1260B9D2F004C1FF3 /* example_eson.bkup */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_eson.bkup; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0777E08E260B974E004C1FF3 /* Frameworks */ = {
+		07343037260C360000330317 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0777E09C260B9788004C1FF3 /* eom.a in Frameworks */,
+				07343042260C361F00330317 /* eom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0734303B260C360000330317 /* sketch */ = {
+			isa = PBXGroup;
+			children = (
+				0734303C260C360000330317 /* main.c */,
+			);
+			path = sketch;
+			sourceTree = "<group>";
+		};
 		0777E085260B849E004C1FF3 = {
 			isa = PBXGroup;
 			children = (
-				0777E0A0260B9BBA004C1FF3 /* eric_original.jpg */,
 				0777E08C260B860E004C1FF3 /* README.md */,
-				0777E09E260B9830004C1FF3 /* example_eson_pretty.block */,
-				0777E09F260B99CA004C1FF3 /* example_eson.block */,
-				0777E0A1260B9D2F004C1FF3 /* example_eson.bkup */,
-				0777E093260B974E004C1FF3 /* eson_demo */,
+				0734303B260C360000330317 /* sketch */,
 				0777E092260B974E004C1FF3 /* Products */,
 				0777E09A260B9788004C1FF3 /* Frameworks */,
 			);
@@ -63,17 +63,9 @@
 		0777E092260B974E004C1FF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0777E091260B974E004C1FF3 /* eson_demo */,
+				0734303A260C360000330317 /* sketch */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0777E093260B974E004C1FF3 /* eson_demo */ = {
-			isa = PBXGroup;
-			children = (
-				0777E094260B974E004C1FF3 /* main.c */,
-			);
-			path = eson_demo;
 			sourceTree = "<group>";
 		};
 		0777E09A260B9788004C1FF3 /* Frameworks */ = {
@@ -87,21 +79,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0777E090260B974E004C1FF3 /* eson_demo */ = {
+		07343039260C360000330317 /* sketch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0777E096260B974E004C1FF3 /* Build configuration list for PBXNativeTarget "eson_demo" */;
+			buildConfigurationList = 0734303E260C360000330317 /* Build configuration list for PBXNativeTarget "sketch" */;
 			buildPhases = (
-				0777E08D260B974E004C1FF3 /* Sources */,
-				0777E08E260B974E004C1FF3 /* Frameworks */,
-				0777E08F260B974E004C1FF3 /* CopyFiles */,
+				07343036260C360000330317 /* Sources */,
+				07343037260C360000330317 /* Frameworks */,
+				07343038260C360000330317 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = eson_demo;
-			productName = eson_demo;
-			productReference = 0777E091260B974E004C1FF3 /* eson_demo */;
+			name = sketch;
+			productName = sketch;
+			productReference = 0734303A260C360000330317 /* sketch */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +104,7 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					0777E090260B974E004C1FF3 = {
+					07343039260C360000330317 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -130,36 +122,24 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0777E090260B974E004C1FF3 /* eson_demo */,
+				07343039260C360000330317 /* sketch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0777E08D260B974E004C1FF3 /* Sources */ = {
+		07343036260C360000330317 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0777E095260B974E004C1FF3 /* main.c in Sources */,
+				0734303D260C360000330317 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0777E08A260B849E004C1FF3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		0777E08B260B849E004C1FF3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		0777E097260B974E004C1FF3 /* Debug */ = {
+		0734303F260C360000330317 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +202,7 @@
 			};
 			name = Debug;
 		};
-		0777E098260B974E004C1FF3 /* Release */ = {
+		07343040260C360000330317 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,23 +258,35 @@
 			};
 			name = Release;
 		};
+		0777E08A260B849E004C1FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		0777E08B260B849E004C1FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0734303E260C360000330317 /* Build configuration list for PBXNativeTarget "sketch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0734303F260C360000330317 /* Debug */,
+				07343040260C360000330317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0777E089260B849E004C1FF3 /* Build configuration list for PBXProject "sketchbook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0777E08A260B849E004C1FF3 /* Debug */,
 				0777E08B260B849E004C1FF3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0777E096260B974E004C1FF3 /* Build configuration list for PBXNativeTarget "eson_demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0777E097260B974E004C1FF3 /* Debug */,
-				0777E098260B974E004C1FF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
