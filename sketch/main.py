@@ -13,7 +13,7 @@ def test(size_bytes):
      start = datetime.datetime.now()
      while int(h.hexdigest(), 16) > 2**(512-difficulty):
              nonce += 1
-             h.update(str(nonce).encode('utf-8'))
+             h.update(str(nonce).encode('utf-8') + str(start).encode('utf-8'))
      end = datetime.datetime.now()
      print("\n\n====================\n")
      print("hash: ", h.hexdigest())
@@ -28,9 +28,8 @@ def test(size_bytes):
      log.close()
 
 
+
+log = open("results.csv", "w")
+log.write("bytes,difficulty,nonce,time\n")
 for i in [2**n for n in range(36)]:
     test(i)
-
-log = open("results.csv", "a")
-log.write("done.")
-log.close()
