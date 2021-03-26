@@ -9,8 +9,5 @@
         0263829989b6fd954f72baaf2fc64bc2e2f01d692d4de72986ea808f6e99813f,
         a3a5e715f0cc574a73c3f9bebb6bc24f32ffd5b67b387244c2c909da779a1478
     ],
-    data:{
-        title:profile_picture,
-        data:...
-    }
+    data:...
 }
