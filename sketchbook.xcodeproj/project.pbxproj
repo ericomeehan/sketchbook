@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
-		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
+		0734306F260E61DB00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07343042260C361F00330317 /* eom.a in Frameworks */,
+				0734306F260E61DB00330317 /* eom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
