@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include <math.h>
 
 void write_image_into_eson()
@@ -35,7 +35,7 @@ void write_image_into_eson()
     fclose(eson);
 }
 
-int main()
+int main_c()
 {
     //write_image_into_eson();
     // Now read the contents from eson and write them to a new image file
@@ -100,4 +100,54 @@ int main_t()
         printf("%02X", result[i]);
     }
     return 0;
+}
+
+
+
+int main()
+{
+    FILE *eson_file = fopen("/Users/eric/Documents/sketchbook/example.eson", "r");
+    long size = get_file_size(eson_file);
+    
+    void *local_string = malloc(size);
+    fread(local_string, size, size, eson_file);
+    
+    char *headers = strtok(local_string, ":");
+    long headers_length = strlen(headers);
+    
+    struct Queue kv_pairs = queue_constructor();
+    char *kv = strtok(headers, ",");
+    while (kv)
+    {
+        kv_pairs.push(&kv_pairs, kv, strlen(kv));
+        kv = strtok(NULL, ",");
+    }
+    
+    struct Dictionary eson = dictionary_constructor(compare_string_keys);
+    
+    char *pair = kv_pairs.peek(&kv_pairs);
+    while (pair)
+    {
+        char *key = strtok(pair, ":");
+        
+        char *value = strtok(NULL, "\0");
+        
+        
+        
+        eson.insert(&eson, key, strlen(key), value, strlen(value));
+        
+    }
+    
+    char *k = "data";
+    
+    eson.insert(&eson, k, sizeof(char[strlen(k)]), local_string, sizeof(char[strlen(local_string)]));
+    
+    
+    
+    
+    FILE *output = fopen("/Users/eric/Desktop/output.jpg", "w");
+    char *query = "data";
+    void *d = eson.search(&eson, query, strlen(query));
+    long len = strlen(local_string) - strlen(headers_length);
+    fwrite(d, len, len, output);
 }

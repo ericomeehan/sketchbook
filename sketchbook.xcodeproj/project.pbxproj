@@ -28,11 +28,11 @@
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		07343049260C39D500330317 /* eson.bkup */ = {isa = PBXFileReference; lastKnownFileType = text; path = eson.bkup; sourceTree = "<group>"; };
-		0734304A260C3A0600330317 /* example.eson */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.eson; sourceTree = "<group>"; };
 		0734304C260C3D6700330317 /* pretty.eson */ = {isa = PBXFileReference; lastKnownFileType = text; path = pretty.eson; sourceTree = "<group>"; };
 		0734304E260CBC5B00330317 /* crypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = crypto.a; path = ../../../../usr/local/lib/crypto.a; sourceTree = "<group>"; };
 		07343072260E9F3200330317 /* alternative.eson */ = {isa = PBXFileReference; lastKnownFileType = text; path = alternative.eson; sourceTree = "<group>"; };
 		07343073260F5E3B00330317 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		0734307A260F87D500330317 /* example.eson */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.eson; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +65,7 @@
 				07343072260E9F3200330317 /* alternative.eson */,
 				0734304C260C3D6700330317 /* pretty.eson */,
 				07343049260C39D500330317 /* eson.bkup */,
-				0734304A260C3A0600330317 /* example.eson */,
+				0734307A260F87D500330317 /* example.eson */,
 				0777E08C260B860E004C1FF3 /* README.md */,
 				0734303B260C360000330317 /* sketch */,
 				0777E092260B974E004C1FF3 /* Products */,
