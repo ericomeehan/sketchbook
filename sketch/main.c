@@ -14,6 +14,12 @@
 #include <arpa/inet.h>
 #include <time.h>
 
+struct DataGram
+{
+    int x;
+    char y;
+};
+
 
 void * server_function(void *arg)
 {
@@ -24,23 +30,25 @@ void * server_function(void *arg)
     while (1)
     {
         int client = accept(p2p->server.socket, address, &address_length);
-        char request[255];
-        memset(request, 0, 255);
-        read(client, request, 255);
+        struct DataGram dg;
+        read(client, &dg, 5);
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
+        
+        printf("\t\t\t%s says: %d, %c.\n", client_address, dg.x, dg.y);
 
-        if (strcmp(request, "/known_hosts\n") == 0)
-        {
-            struct ServerRoute *route = p2p->server.routes.search(&p2p->server.routes, request, sizeof(request));
-            char *response = route->route_function(arg);
-            write(client, response, sizeof(char[strlen(response)]));
-            close(client);
-        }
-        else
-        {
-            printf("\t\t\t%s says: %s\n", client_address, request);
-            close(client);
-        }
+//        if (strcmp(request, "/known_hosts\n") == 0)
+//        {
+//            struct ServerRoute *route = p2p->server.routes.search(&p2p->server.routes, request, sizeof(request));
+//            char *response = route->route_function(arg);
+//            write(client, response, sizeof(char[strlen(response)]));
+//            close(client);
+//        }
+//        else
+//        {
+//
+//            printf("\t\t\t%s says: %s\n", client_address, request);
+//            close(client);
+//        }
         short found = 0;
         for (int i = 0; i < p2p->known_hosts.length && !found; i++)
         {
@@ -60,6 +68,15 @@ void * server_function(void *arg)
 void * client_function(void *arg)
 {
     struct PeerToPeer *p2p = arg;
+    
+// MARK: TEST SITE
+    
+    struct DataGram dg;
+    dg.x = 5;
+    dg.y = 'c';
+    
+    
+    
     while (1)
     {
         clock_t start = clock();
@@ -69,12 +86,12 @@ void * client_function(void *arg)
         fgets(request, 255, stdin);
         for (int i = 0; i < p2p->known_hosts.length; i++)
         {
-            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), request));
+            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), &dg, sizeof(dg)));
         }
         clock_t end = clock();
         if ((end - start) > 500)
         {
-            char *response = client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, 0), "/known_hosts\n");
+            char *response = client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, 0), "/known_hosts\n", 14);
             printf("%s\n", response);
         }
     }
