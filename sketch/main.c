@@ -6,8 +6,11 @@
 //
 
 #include "../../libeom/libeom.h"
-#include <stdio.h>
 
+#include "ExampleStructure.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -30,11 +33,12 @@ void * server_function(void *arg)
     while (1)
     {
         int client = accept(p2p->server.socket, address, &address_length);
-        struct DataGram dg;
-        read(client, &dg, 5);
+        void *data = malloc(1000);
+        read(client, data, 1000);
+        struct ExampleStructure ex = decode_ex(data);
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
+        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, ex.nonce, ex.size, ex.data);
         
-        printf("\t\t\t%s says: %d, %c.\n", client_address, dg.x, dg.y);
 
 //        if (strcmp(request, "/known_hosts\n") == 0)
 //        {
@@ -75,6 +79,16 @@ void * client_function(void *arg)
     dg.x = 5;
     dg.y = 'c';
     
+    struct ExampleStructure ex;
+    for (int i = 0; i < 64; i++)
+    {
+        ex.i[i] = i;
+        ex.previous_hash[i] = 63 - i;
+    }
+    ex.nonce = 1234;
+    char *test = "eric meehan";
+    ex.data = test;
+    ex.size = sizeof(char[strlen(test)]);
     
     
     while (1)
@@ -86,7 +100,7 @@ void * client_function(void *arg)
         fgets(request, 255, stdin);
         for (int i = 0; i < p2p->known_hosts.length; i++)
         {
-            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), &dg, sizeof(dg)));
+            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), &ex, sizeof(ex)));
         }
         clock_t end = clock();
         if ((end - start) > 500)

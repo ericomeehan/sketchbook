@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
 		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
+		0734307F260FBA0700330317 /* ExampleStructure.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734307E260FBA0700330317 /* ExampleStructure.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0734307D260FBA0700330317 /* ExampleStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleStructure.h; sourceTree = "<group>"; };
+		0734307E260FBA0700330317 /* ExampleStructure.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ExampleStructure.c; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +49,8 @@
 			isa = PBXGroup;
 			children = (
 				0734303C260C360000330317 /* main.c */,
+				0734307D260FBA0700330317 /* ExampleStructure.h */,
+				0734307E260FBA0700330317 /* ExampleStructure.c */,
 			);
 			path = sketch;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0734307F260FBA0700330317 /* ExampleStructure.c in Sources */,
 				0734303D260C360000330317 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
