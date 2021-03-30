@@ -20,4 +20,13 @@ struct ExampleStructure
     void *data;
 };
 
+struct ExampleII
+{
+    unsigned char i[64];
+    unsigned char previous_hash[64];
+    unsigned long size;
+    unsigned long nonce;
+    unsigned char data;
+};
+
 #endif /* ExampleStructure_h */

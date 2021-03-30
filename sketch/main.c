@@ -35,9 +35,9 @@ void * server_function(void *arg)
         int client = accept(p2p->server.socket, address, &address_length);
         void *data = malloc(1000);
         read(client, data, 1000);
-        struct ExampleStructure ex = decode_ex(data);
+        struct ExampleStructure *ex = data;
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
-        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, ex.nonce, ex.size, ex.data);
+        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, ex->nonce, ex->size, ex->data);
         
 
 //        if (strcmp(request, "/known_hosts\n") == 0)
