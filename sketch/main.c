@@ -6,8 +6,7 @@
 //
 
 #include "../../libeom/libeom.h"
-
-#include "ExampleStructure.h"
+#include "Block.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,13 +15,6 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <time.h>
-
-struct DataGram
-{
-    int x;
-    char y;
-};
-
 
 void * server_function(void *arg)
 {
@@ -33,11 +25,13 @@ void * server_function(void *arg)
     while (1)
     {
         int client = accept(p2p->server.socket, address, &address_length);
-        void *data = malloc(1000);
-        read(client, data, 1000);
-        struct ExampleStructure *ex = data;
+        
+        struct BlockHeders b;
+        read(client, &b, sizeof(b));
+        void *block = malloc(sizeof(struct BlockHeders) + b.size);
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
-        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, ex->nonce, ex->size, ex->data);
+        char *eric = block;
+        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, b.nonce, b.size, eric);
         
 
 //        if (strcmp(request, "/known_hosts\n") == 0)
@@ -74,23 +68,17 @@ void * client_function(void *arg)
     struct PeerToPeer *p2p = arg;
     
 // MARK: TEST SITE
-    
-    struct DataGram dg;
-    dg.x = 5;
-    dg.y = 'c';
-    
-    struct ExampleStructure ex;
+    char *eric = "eric meehan";
+    struct BlockHeders *b = malloc(sizeof(char[strlen(eric)])+sizeof(struct BlockHeders));
     for (int i = 0; i < 64; i++)
     {
-        ex.i[i] = i;
-        ex.previous_hash[i] = 63 - i;
+        b->id[i] = i;
+        b->previous_hash[i] = 63 - i;
     }
-    ex.nonce = 1234;
-    char *test = "eric meehan";
-    ex.data = test;
-    ex.size = sizeof(char[strlen(test)]);
-    
-    
+    b->nonce = 1234;
+    b->size = sizeof(char[strlen(eric)]);
+    memcpy(b+sizeof(struct BlockHeders), eric, sizeof(char[strlen(eric)]));
+        
     while (1)
     {
         clock_t start = clock();
@@ -100,7 +88,7 @@ void * client_function(void *arg)
         fgets(request, 255, stdin);
         for (int i = 0; i < p2p->known_hosts.length; i++)
         {
-            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), &ex, sizeof(ex)));
+            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), b, sizeof(*b)));
         }
         clock_t end = clock();
         if ((end - start) > 500)
