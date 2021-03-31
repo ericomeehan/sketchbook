@@ -16,7 +16,8 @@ struct BlockHeders
     unsigned char previous_hash[64];
     unsigned long nonce;
     unsigned long size;
-    char data[];
 };
+
+void * connect_headers_to_data(struct BlockHeders *headers, void *data, unsigned long size);
 
 #endif /* Block_h */

@@ -26,13 +26,13 @@ void * server_function(void *arg)
     {
         int client = accept(p2p->server.socket, address, &address_length);
         
-        struct BlockHeders b;
-        read(client, &b, sizeof(b));
-        void *block = malloc(sizeof(struct BlockHeders) + b.size);
+        void *block = calloc(1000, 1);
+        read(client, block, 1000);
+        struct BlockHeders *b = block;
+        char *eric = block + 144;
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
-        char *eric = block;
-        printf("\t\t\t%s says: %lu, %lu, %s.\n", client_address, b.nonce, b.size, eric);
-        
+        printf("\t\t\t%s says: %lu, %lu, %s\n", client_address, b->nonce, b->size, eric);
+        close(client);
 
 //        if (strcmp(request, "/known_hosts\n") == 0)
 //        {
@@ -67,18 +67,7 @@ void * client_function(void *arg)
 {
     struct PeerToPeer *p2p = arg;
     
-// MARK: TEST SITE
-    char *eric = "eric meehan";
-    struct BlockHeders *b = malloc(sizeof(char[strlen(eric)])+sizeof(struct BlockHeders));
-    for (int i = 0; i < 64; i++)
-    {
-        b->id[i] = i;
-        b->previous_hash[i] = 63 - i;
-    }
-    b->nonce = 1234;
-    b->size = sizeof(char[strlen(eric)]);
-    memcpy(b+sizeof(struct BlockHeders), eric, sizeof(char[strlen(eric)]));
-        
+// MARK: CLIENT SITE
     while (1)
     {
         clock_t start = clock();
@@ -88,7 +77,17 @@ void * client_function(void *arg)
         fgets(request, 255, stdin);
         for (int i = 0; i < p2p->known_hosts.length; i++)
         {
-            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), b, sizeof(*b)));
+            struct BlockHeders b;
+            for (int i = 0; i < 64; i++)
+            {
+                b.id[i] = i;
+                b.previous_hash[i] = 63 - i;
+            }
+            b.nonce = 1234;
+            b.size = sizeof(char[strlen(request)]) - 1 + sizeof(struct BlockHeders);
+            
+            void *data_to_send = connect_headers_to_data(&b, request, b.size);
+            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), data_to_send, b.size));
         }
         clock_t end = clock();
         if ((end - start) > 500)
