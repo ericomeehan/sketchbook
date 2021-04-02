@@ -26,12 +26,18 @@ void * server_function(void *arg)
     {
         int client = accept(p2p->server.socket, address, &address_length);
         
-        void *block = calloc(1000, 1);
-        read(client, block, 1000);
-        struct BlockHeders *b = block;
+        void *block_headers = calloc(sizeof(struct BlockHeders), 1);
+        read(client, block_headers, sizeof(struct BlockHeders));
+        struct BlockHeders *b = block_headers;
+        void *block = calloc(1, b->size);
+        read(client, block, b->size);
+        
+        struct BlockHeader *asdf = block;
+        
+        
         char *eric = block + 144;
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
-        printf("\t\t\t%s says: %lu, %lu, %s\n", client_address, b->nonce, b->size, eric);
+        printf("\t\t\t%s says: %lu, %lu, %s\n", client_address, ((struct BlockHeders *)block)->nonce, b->size, eric);
         close(client);
 
 //        if (strcmp(request, "/known_hosts\n") == 0)
