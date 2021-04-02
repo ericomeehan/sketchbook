@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0705733C2616BA1200D9EE57 /* Block.c in Sources */ = {isa = PBXBuildFile; fileRef = 0705733B2616BA1200D9EE57 /* Block.c */; };
+		070573402616BB4C00D9EE57 /* Transaction.c in Sources */ = {isa = PBXBuildFile; fileRef = 0705733F2616BB4C00D9EE57 /* Transaction.c */; };
 		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
 		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0705733A2616BA1200D9EE57 /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		0705733B2616BA1200D9EE57 /* Block.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Block.c; sourceTree = "<group>"; };
+		0705733E2616BB4C00D9EE57 /* Transaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		0705733F2616BB4C00D9EE57 /* Transaction.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Transaction.c; sourceTree = "<group>"; };
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -46,6 +52,10 @@
 			isa = PBXGroup;
 			children = (
 				0734303C260C360000330317 /* main.c */,
+				0705733A2616BA1200D9EE57 /* Block.h */,
+				0705733B2616BA1200D9EE57 /* Block.c */,
+				0705733E2616BB4C00D9EE57 /* Transaction.h */,
+				0705733F2616BB4C00D9EE57 /* Transaction.c */,
 			);
 			path = sketch;
 			sourceTree = "<group>";
@@ -132,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070573402616BB4C00D9EE57 /* Transaction.c in Sources */,
 				0734303D260C360000330317 /* main.c in Sources */,
+				0705733C2616BA1200D9EE57 /* Block.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
