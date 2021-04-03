@@ -1,12 +1,23 @@
-#  Sketchbook
-## Eric O Meehan
+#  Blockchain
 
-This repository is a collection of experiments in various programming languages.  Experiments are organized by branches and a running list of experiments is maintained below, each with its own version of this README describing the experiment.  
+Developing a blockchain on a livestream.
 
-Feel free to use, adapt, and distribute, but changes to the source code must be open source (and I would appreciate an email about what you did with it!).
+## Original Video
 
-
-# Index of Branches
+https://youtu.be/alNU9AVWkQk
 
 
-main
+## Video Description:
+
+An introduction to blockchain technologies with python.  
+
+Now that we have developed a basic peer-to-peer network in C, I want to begin implementing some elements from blockchain into the network.  To ensure that everyone is on the same page, I am going to build a simple blockchain from scratch in Python so that we can understand how it works at a more fundamental level.
+
+Source Code:
+https://www.github.com/ericomeehan/sketchbook
+
+Discord Server:
+https://discord.gg/PTWecyAbDU
+
+SHA-256 video by learnmeabitcoin:
+https://www.youtube.com/watch?v=f9EbD6iY9zI&t=775s

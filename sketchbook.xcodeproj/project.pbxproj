@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		070573562618930400D9EE57 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -15,6 +16,7 @@
 			isa = PBXGroup;
 			children = (
 				0777E08C260B860E004C1FF3 /* README.md */,
+				070573562618930400D9EE57 /* main.py */,
 			);
 			sourceTree = "<group>";
 		};
