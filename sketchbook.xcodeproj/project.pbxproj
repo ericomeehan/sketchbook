@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		070573562618930400D9EE57 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		070573582618A23300D9EE57 /* block.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = block.py; sourceTree = "<group>"; };
+		070573592618A7F000D9EE57 /* chain.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = chain.py; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -17,6 +19,8 @@
 			children = (
 				0777E08C260B860E004C1FF3 /* README.md */,
 				070573562618930400D9EE57 /* main.py */,
+				070573582618A23300D9EE57 /* block.py */,
+				070573592618A7F000D9EE57 /* chain.py */,
 			);
 			sourceTree = "<group>";
 		};
