@@ -41,7 +41,8 @@ struct Block * create_transaction_block()
 int main(int argc, const char * argv[])
 {
     struct Block *block = create_transaction_block();
-    printf("Fingerprint: %s\nPrevious Hash: %s\nSize: %d\nNonce: %d\nTimestamp: %s\n\n", block->headers.fingerprint, block->headers.previous_hash, block->headers.size, block->headers.nonce, block->headers.timestamp);
+    printf("%lu\n\n", sizeof(struct BlockHeaders));
+    printf("Fingerprint: %s\nPrevious Hash: %s\nSize: %lu\nNonce: %lu\nTimestamp: %s\n\n", block->headers.fingerprint, block->headers.previous_hash, block->headers.size, block->headers.nonce, block->headers.timestamp);
     printf("To: %s\nFrom: %s\nAmount: %d\n", ((struct Transaction *)&block->data)->headers.to, ((struct Transaction *)&block->data)->headers.from, ((struct Transaction *)&block->data)->data);
     return 0;
 }

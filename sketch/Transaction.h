@@ -17,13 +17,13 @@ struct TransactionHeaders
     unsigned long nonce;
     unsigned long base;
     unsigned long precision;
-};
+} __attribute__((packed));
 
 struct Transaction
 {
     struct TransactionHeaders headers;
     unsigned char data;
-};
+} __attribute__((packed));
 
 
 

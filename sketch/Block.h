@@ -15,12 +15,12 @@ struct BlockHeaders
     unsigned char fingerprint[64];
     unsigned char timestamp[20];
     unsigned long size;
-};
+} __attribute__((packed));
 
 struct Block
 {
     struct BlockHeaders headers;
     unsigned char data;
-};
+} __attribute__((packed));
 
 #endif /* Block_h */
