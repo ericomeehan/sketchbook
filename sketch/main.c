@@ -8,8 +8,17 @@
 #include "../../libeom/libeom.h"
 #include <stdio.h>
 
+enum
+{
+    a,
+};
+
+// argv[0] = program name
+// argv[1] = first arg
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+    for (int i = 0; i < argc; i++)
+    {
+        printf("%s\n", argv[i]);
+    }
 }
