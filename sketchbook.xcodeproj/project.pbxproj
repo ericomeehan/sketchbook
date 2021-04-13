@@ -40,7 +40,6 @@
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
 		07A23B29262288F60087BE64 /* sketch-b */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "sketch-b"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A23B322622891B0087BE64 /* pipe_to.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pipe_to.c; sourceTree = "<group>"; };
-		07A23B3D26228E6B0087BE64 /* example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = example.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +66,6 @@
 			children = (
 				07A23B322622891B0087BE64 /* pipe_to.c */,
 				0734303C260C360000330317 /* pipe_from.c */,
-				07A23B3D26228E6B0087BE64 /* example.h */,
 			);
 			path = sketch;
 			sourceTree = "<group>";
