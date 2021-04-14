@@ -11,10 +11,13 @@
 
 int main(int argc, const char * argv[])
 {
-    printf("%d\n", fileno(stdin));
-    FILE *pipe = popen("/Users/eric/Documents/sketchbook/to", "w");
-    char *message = "hello world";
-    fwrite(message, 12, 1, pipe);
-    pclose(pipe);
-    return 0;
+    char message[256];
+    do
+    {
+        memset(message, 0, 256);
+        fread(message, 256, 1, stdin);
+        FILE *pipe = popen("/Users/eric/Documents/sketchbook/to", "w");
+        fwrite(message, 256, 1, pipe);
+        pclose(pipe);
+    } while (strcmp(message, "quit\n") != 0);
 }
