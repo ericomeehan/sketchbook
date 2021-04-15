@@ -5,19 +5,28 @@
 //  Created by Eric Meehan on 3/24/21.
 //
 
-#include "../../libeom/libeom.h"
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-int main(int argc, const char * argv[])
+
+int main()
 {
-    char message[256];
-    do
-    {
-        memset(message, 0, 256);
-        fread(message, 256, 1, stdin);
-        FILE *pipe = popen("/Users/eric/Documents/sketchbook/to", "w");
-        fwrite(message, 256, 1, pipe);
-        pclose(pipe);
-    } while (strcmp(message, "quit\n") != 0);
+    int fd = open("pipe", O_RDWR);
+    
+    char *message = "hello world";
+    write(fd, message, strlen(message) + 1);
+    
+    FILE *process = popen("./to", "w");
+    pclose(process);
+    
+    char buffer[256];
+    read(fd, buffer, 256);
+    
+    printf("%s\n", buffer);
+    
+    close(fd);
+    
+    return 0;
 }
