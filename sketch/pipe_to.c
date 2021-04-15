@@ -13,8 +13,13 @@
 int main(int argc, const char *argv[])
 {
     char buffer[256];
-    int fd = open("pipe", O_RDWR);
-    read(fd, buffer, 256);
-    write(fd, buffer, strlen(buffer) + 1);
-    close(fd);
+    int pipe = open("pipe", O_RDWR);
+    read(pipe, buffer, 256);
+    
+    printf("%s\n", buffer);
+    
+    char *reply = "hello yourself";
+    write(pipe, reply, strlen(reply) + 1);
+    close(pipe);
+    return 0;
 }

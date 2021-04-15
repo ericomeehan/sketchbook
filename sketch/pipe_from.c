@@ -10,23 +10,19 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-
 int main()
 {
-    int fd = open("pipe", O_RDWR);
-    
-    char *message = "hello world";
-    write(fd, message, strlen(message) + 1);
+    int pipe = open("pipe", O_RDWR);
+    char *hello = "hello world";
+    write(pipe, hello, strlen(hello) + 1);
     
     FILE *process = popen("./to", "w");
     pclose(process);
     
     char buffer[256];
-    read(fd, buffer, 256);
-    
+    read(pipe, buffer, 256);
     printf("%s\n", buffer);
     
-    close(fd);
-    
+    close(pipe);
     return 0;
 }
