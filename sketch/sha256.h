@@ -24,10 +24,10 @@ static inline void put_be32(void *ptr, uint32_t value)
 }
 
 struct blk_SHA256_CTX {
-	uint32_t state[8];
-	uint64_t size;
-	uint32_t offset;
-	uint8_t buf[blk_SHA256_BLKSIZE];
+    uint32_t state[8];
+    uint64_t size;
+    uint32_t offset;
+    uint8_t buf[blk_SHA256_BLKSIZE];
 };
 
 typedef struct blk_SHA256_CTX blk_SHA256_CTX;

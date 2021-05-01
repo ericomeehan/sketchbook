@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070A9B6A262B69940001DA90 /* sha512.c in Sources */ = {isa = PBXBuildFile; fileRef = 070A9B69262B69940001DA90 /* sha512.c */; };
 		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
 		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
+		07EB3B5F2637367100B3859E /* sha256.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3B5E2637367100B3859E /* sha256.c */; };
+		07EB3B67263737B300B3859E /* my512.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3B66263737B300B3859E /* my512.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070A9B68262B69940001DA90 /* sha512.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
+		070A9B69262B69940001DA90 /* sha512.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sha512.c; sourceTree = "<group>"; };
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
+		07EB3B5D2637367100B3859E /* sha256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha256.h; sourceTree = "<group>"; };
+		07EB3B5E2637367100B3859E /* sha256.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sha256.c; sourceTree = "<group>"; };
+		07EB3B65263737B300B3859E /* my512.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = my512.h; sourceTree = "<group>"; };
+		07EB3B66263737B300B3859E /* my512.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = my512.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +55,12 @@
 			isa = PBXGroup;
 			children = (
 				0734303C260C360000330317 /* main.c */,
+				070A9B68262B69940001DA90 /* sha512.h */,
+				070A9B69262B69940001DA90 /* sha512.c */,
+				07EB3B65263737B300B3859E /* my512.h */,
+				07EB3B66263737B300B3859E /* my512.c */,
+				07EB3B5D2637367100B3859E /* sha256.h */,
+				07EB3B5E2637367100B3859E /* sha256.c */,
 			);
 			path = sketch;
 			sourceTree = "<group>";
@@ -133,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0734303D260C360000330317 /* main.c in Sources */,
+				07EB3B5F2637367100B3859E /* sha256.c in Sources */,
+				07EB3B67263737B300B3859E /* my512.c in Sources */,
+				070A9B6A262B69940001DA90 /* sha512.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
