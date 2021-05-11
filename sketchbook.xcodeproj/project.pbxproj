@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0734303D260C360000330317 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* main.c */; };
+		07203009263F343700804BDD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 07203008263F343700804BDD /* main.c */; };
+		07203035263F677200804BDD /* example_b.c in Sources */ = {isa = PBXBuildFile; fileRef = 07203034263F677200804BDD /* example_b.c */; };
+		0734303D260C360000330317 /* example.c in Sources */ = {isa = PBXBuildFile; fileRef = 0734303C260C360000330317 /* example.c */; };
 		07343042260C361F00330317 /* eom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777E09B260B9788004C1FF3 /* eom.a */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07203008263F343700804BDD /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		07203033263F677200804BDD /* example_b.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = example_b.h; sourceTree = "<group>"; };
+		07203034263F677200804BDD /* example_b.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = example_b.c; sourceTree = "<group>"; };
 		0734303A260C360000330317 /* sketch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketch; sourceTree = BUILT_PRODUCTS_DIR; };
-		0734303C260C360000330317 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0734303C260C360000330317 /* example.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = example.c; sourceTree = "<group>"; };
 		0777E08C260B860E004C1FF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0777E09B260B9788004C1FF3 /* eom.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = eom.a; path = ../libeom/eom.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +50,10 @@
 		0734303B260C360000330317 /* sketch */ = {
 			isa = PBXGroup;
 			children = (
-				0734303C260C360000330317 /* main.c */,
+				0734303C260C360000330317 /* example.c */,
+				07203008263F343700804BDD /* main.c */,
+				07203033263F677200804BDD /* example_b.h */,
+				07203034263F677200804BDD /* example_b.c */,
 			);
 			path = sketch;
 			sourceTree = "<group>";
@@ -132,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0734303D260C360000330317 /* main.c in Sources */,
+				07203035263F677200804BDD /* example_b.c in Sources */,
+				07203009263F343700804BDD /* main.c in Sources */,
+				0734303D260C360000330317 /* example.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
