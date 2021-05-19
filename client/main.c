@@ -1,11 +1,10 @@
 //
 //  main.c
-//  sketch
+//  client
 //
-//  Created by Eric Meehan on 3/24/21.
+//  Created by Eric Meehan on 5/13/21.
 //
 
-#include "../../libeom/libeom.h"
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
